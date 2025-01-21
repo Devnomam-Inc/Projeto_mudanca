@@ -9,6 +9,11 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 h1 {
@@ -52,6 +57,7 @@ label {
 
 input, select, textarea, button {
   width: 100%;
+  max-width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #333;
