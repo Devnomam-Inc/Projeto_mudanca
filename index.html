@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulário de Mudança</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="form-container">
@@ -47,23 +47,23 @@
           <option value="medio">Médio</option>
           <option value="grande">Grande</option>
         </select>
-
-        <label>Serviços Adicionais:</label>
+        
         <div class="checkbox-group">
           <div>
-            <input type="checkbox" id="montagem" name="servicos" value="montagem">
-            <label for="montagem">Mont./Desmont.</label>
+            <input type="checkbox" id="mont-desmont" name="mont-desmont">
+            <label for="mont-desmont">Mont./Desmont.</label>
           </div>
           <div>
-            <input type="checkbox" id="embalagem" name="servicos" value="embalagem">
+            <input type="checkbox" id="embalagem" name="embalagem">
             <label for="embalagem">Embalagem</label>
           </div>
         </div>
-
+        
         <label for="observacoes">Observações:</label>
-        <textarea id="observacoes" name="observacoes" placeholder="Digite suas observações"></textarea>
+        <textarea id="observacoes" name="observacoes" placeholder="Digite suas observações" rows="4"></textarea>
       </fieldset>
-
+      
+      <!-- Botão de Envio -->
       <button type="submit">Enviar</button>
     </form>
   </div>
