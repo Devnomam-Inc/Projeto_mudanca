@@ -42,13 +42,13 @@ label {
 }
 
 input, select, textarea {
-  width: calc(100% - 20px); /* Corrige inputs maiores */
-  max-width: 100%; /* Garante que não ultrapassem o container */
+  width: calc(100% - 20px);
+  max-width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-sizing: border-box; /* Garante o espaçamento correto */
+  box-sizing: border-box;
 }
 
 .checkbox-group {
