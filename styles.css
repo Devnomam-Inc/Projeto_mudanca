@@ -1,0 +1,87 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 20px auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+legend {
+  font-weight: bold;
+  color: #555;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.checkbox-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.success-message, .error-message {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.success-message {
+  color: green;
+}
+
+.error-message {
+  color: red;
+}
