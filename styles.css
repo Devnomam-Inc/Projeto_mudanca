@@ -61,7 +61,7 @@ input, select, textarea {
 /* Checkboxes */
 .checkbox-group {
   display: flex;
-  gap: 0px; /* Espaçamento entre itens */
+  gap: 10px; /* Espaçamento entre itens */
   align-items: center;
   margin-bottom: 15px;
 }
