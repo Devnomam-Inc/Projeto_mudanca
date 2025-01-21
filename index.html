@@ -1,84 +1,71 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulário de Mudança</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#007BFF">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="form-container">
     <h1>Formulário de Mudança</h1>
-    <form id="form-mudanca">
+    <form>
+      <!-- Dados Pessoais -->
       <fieldset>
         <legend>Dados Pessoais</legend>
         <label for="nome">Nome Completo:</label>
-        <input type="text" id="nome" name="nome" required>
-
+        <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+        
         <label for="celular">Celular:</label>
-        <input type="tel" id="celular" name="celular" required placeholder="(XX) XXXXX-XXXX">
-
-        <label for="endereco_atual">Endereço Atual:</label>
-        <input type="text" id="endereco_atual" name="endereco_atual" required>
-
-        <label for="endereco_destino">Endereço de Destino:</label>
-        <input type="text" id="endereco_destino" name="endereco_destino" required>
-
-        <label for="cpf_cnpj">CPF:</label>
-        <input type="text" id="cpf_cnpj" name="cpf_cnpj" required placeholder="XXX.XXX.XXX-XX">
+        <input type="tel" id="celular" name="celular" placeholder="(XX) XXXXX-XXXX" required>
+        
+        <label for="endereco-atual">Endereço Atual:</label>
+        <input type="text" id="endereco-atual" name="endereco-atual" placeholder="Endereço com CEP" required>
+        
+        <label for="endereco-destino">Endereço de Destino:</label>
+        <input type="text" id="endereco-destino" name="endereco-destino" placeholder="Endereço com CEP" required>
+        
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" placeholder="XXX.XXX.XXX-XX" required>
       </fieldset>
-
+      
+      <!-- Detalhes da Mudança -->
       <fieldset>
         <legend>Detalhes da Mudança</legend>
-        <label for="tipo_mudanca">Tipo de Mudança:</label>
-        <select id="tipo_mudanca" name="tipo_mudanca" required>
+        <label for="tipo-mudanca">Tipo de Mudança:</label>
+        <select id="tipo-mudanca" name="tipo-mudanca">
           <option value="residencial">Residencial</option>
           <option value="comercial">Comercial</option>
         </select>
-
-        <label for="data_mudanca">Data da Mudança:</label>
-        <input type="date" id="data_mudanca" name="data_mudanca" required>
-
+        
+        <label for="data-mudanca">Data da Mudança:</label>
+        <input type="date" id="data-mudanca" name="data-mudanca" required>
+        
         <label for="volume">Volume:</label>
-        <select id="volume" name="volume" required>
+        <select id="volume" name="volume">
           <option value="pequeno">Pequeno</option>
           <option value="medio">Médio</option>
           <option value="grande">Grande</option>
         </select>
 
-        <label for="servicos_adicionais">Serviços Adicionais:</label>
+        <label>Serviços Adicionais:</label>
         <div class="checkbox-group">
-
-          <label for="montagem">Mont./Desmont.</label>
-
-          <input type="checkbox" id="montagem" name="servicos_adicionais" value="Montagem/Desmontagem">
-
-         <label for="embalagem">Embalagem</label>
-
-          <input type="checkbox" id="embalagem" name="servicos_adicionais" value="Embalagem">
-          
+          <div>
+            <input type="checkbox" id="montagem" name="servicos" value="montagem">
+            <label for="montagem">Mont./Desmont.</label>
+          </div>
+          <div>
+            <input type="checkbox" id="embalagem" name="servicos" value="embalagem">
+            <label for="embalagem">Embalagem</label>
+          </div>
         </div>
 
         <label for="observacoes">Observações:</label>
-        <textarea id="observacoes" name="observacoes" rows="5"></textarea>
+        <textarea id="observacoes" name="observacoes" placeholder="Digite suas observações"></textarea>
       </fieldset>
 
       <button type="submit">Enviar</button>
     </form>
-    <div class="success-message" id="success-message" style="display: none;">Formulário enviado com sucesso! Em breve nossa equipe entrará em contato para mais informações.</div>
-    <div class="error-message" id="error-message" style="display: none;">Erro ao enviar o formulário. Tente novamente.</div>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script src="script.js"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js')
-        .then(() => console.log('Service Worker registrado!'))
-        .catch(error => console.error('Erro ao registrar o Service Worker:', error));
-    }
-  </script>
 </body>
 </html>
