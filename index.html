@@ -166,7 +166,14 @@
     <div class="success-message" id="success-message" style="display: none;">Formulario enviado com sucesso! Em breve nossa equipe entrará em contato para mais informações.</div>
     <div class="error-message" id="error-message" style="display: none;">Erro ao enviar o formulario. Tente novamente.</div>
   </div>
-
+  
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(() => console.log('Service Worker registrado com sucesso.'))
+      .catch((error) => console.log('Erro ao registrar o Service Worker:', error));
+  }
+</script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>
