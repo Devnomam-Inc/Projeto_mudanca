@@ -1,126 +1,107 @@
-/* Geral */
 body {
   font-family: Arial, sans-serif;
-  background-color: #121212;
-  color: #fff;
+  background-color: #F5F5F5; /* Cinza Claro */
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  box-sizing: border-box;
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
+.form-container {
+  max-width: 600px;
+  margin: 20px auto;
+  background: #FFFFFF; /* Branco */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 20px;
-  color: #00aaff;
+  color: #005B96; /* Azul Escuro */
 }
 
-.form-container {
-  width: 100%;
-  max-width: 500px;
-  background-color: #1e1e1e;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Formulário */
 form {
   display: flex;
   flex-direction: column;
-  max-width: 100%;
 }
 
 fieldset {
-  border: 1px solid #444;
+  width: 100%;
+  border: 1px solid #C1D3E0; /* Cinza Azulado */
   border-radius: 5px;
-  margin-bottom: 20px;
   padding: 15px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
 }
 
 legend {
-  padding: 0 10px;
-  color: #00aaff;
+  font-weight: bold;
+  color: #005B96; /* Azul Escuro */
 }
 
 label {
   margin-bottom: 5px;
   font-weight: bold;
-  display: block;
+  color: #005B96; /* Azul Escuro */
 }
 
-input, select, textarea, button {
+input, select, textarea {
   width: 100%;
-  max-width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid #333;
+  border: 1px solid #C1D3E0; /* Cinza Azulado */
   border-radius: 5px;
-  background-color: #292929;
-  color: #fff;
-  font-size: 14px;
+  box-sizing: border-box;
 }
 
-input:focus, select:focus, textarea:focus {
-  border-color: #00aaff;
-  outline: none;
-}
-
-textarea {
-  resize: none;
-}
-
-button {
-  background-color: #00aaff;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  font-weight: bold;
-  text-transform: uppercase;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #0088cc;
-}
-
-/* Grupo de checkboxes */
 .checkbox-group {
   display: flex;
   gap: 10px;
-  align-items: center;
+  margin-bottom: 15px;
 }
 
-.checkbox-group label {
-  margin-bottom: 0;
-  font-weight: normal;
+textarea {
+  resize: vertical;
 }
 
-input[type="checkbox"] {
-  width: auto;
-}
-
-/* Mensagens */
-.success-message, .error-message {
-  margin-top: 20px;
-  padding: 10px;
+button {
+  background-color: #FFCC00; /* Amarelo Ouro */
+  color: white;
+  border: none;
+  padding: 10px 20px;
   border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #E6B800; /* Amarelo mais escuro */
+}
+
+.success-message, .error-message {
   text-align: center;
+  margin-top: 20px;
 }
 
 .success-message {
-  background-color: #28a745;
-  color: #fff;
+  color: green;
 }
 
 .error-message {
-  background-color: #dc3545;
-  color: #fff;
+  color: red;
+}
+
+/* Melhoria para responsividade */
+@media (max-width: 480px) {
+  .form-container {
+    padding: 15px;
+  }
+
+  input, select, textarea {
+    padding: 8px;
+  }
+
+  button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
 }
