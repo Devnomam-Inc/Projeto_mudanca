@@ -100,26 +100,32 @@ document.getElementById("form-mudanca").addEventListener("submit", function (eve
     );
 });
 
-                    self.addEventListener('install', function (event) {
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js').then(() => {
+    console.log('Service Worker registrado com sucesso.');
+  }).catch((error) => {
+    console.error('Falha ao registrar o Service Worker:', error);
+  });
+}
+
+const cacheName = 'pwa-cache-v1';
+const filesToCache = [
+  '/',
+  '/index.html',
+  '/styles.css',
+  '/script.js',
+  '/icon-192x192.png',
+  '/icon-512x512.png'
+];
+
+self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open('formulario-cache').then(function (cache) {
-      return cache.addAll([
-        './',
-        './index.html',
-        './styles.css',
-        './script.js',
-        './manifest.json',
-        './icon-192x192.png',
-        './icon-512x512.png',
-      ]);
-    })
+    caches.open(cacheName).then((cache) => cache.addAll(filesToCache))
   );
 });
 
-self.addEventListener('fetch', function (event) {
+self.addEventListener('fetch', (event) => {
   event.respondWith(
-    caches.match(event.request).then(function (response) {
-      return response || fetch(event.request);
-    })
+    caches.match(event.request).then((response) => response || fetch(event.request))
   );
 });
