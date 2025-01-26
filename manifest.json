@@ -7,12 +7,12 @@
   "theme_color": "#4CAF50",
   "icons": [
     {
-      "src": "mudanca-icon.png",
+      "src": "caminhao-logo.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "mudanca-icon.png",
+      "src": "caminhao-logo2.png",
       "sizes": "512x512",
       "type": "image/png"
     }
