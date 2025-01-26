@@ -1,42 +1,101 @@
-// Inicializa o EmailJS
-emailjs.init("tHArcRaXc2OD5e6TV"); // Substitua pela sua chave pública
+// Função para buscar o endereço através do CEP
+function buscarEndereco(cepInputId, enderecoId, bairroId, cidadeId, estadoId, numeroId) {
+  const cepInput = document.getElementById(cepInputId);
+  const enderecoInput = document.getElementById(enderecoId);
+  const bairroInput = document.getElementById(bairroId);
+  const cidadeInput = document.getElementById(cidadeId);
+  const estadoSelect = document.getElementById(estadoId);
+  const numeroInput = document.getElementById(numeroId);
 
-// Envio do formulário
-document.getElementById('form-mudanca').addEventListener('submit', function(event) {
-  event.preventDefault();
+  cepInput.addEventListener("input", function (event) {
+    const cep = event.target.value.replace(/\D/g, ""); // Remove caracteres não numéricos
+    if (cep.length === 8) {
+      fetch(`https://viacep.com.br/ws/${cep}/json/`)
+        .then((response) => {
+          if (!response.ok) throw new Error("Erro ao buscar o CEP");
+          return response.json();
+        })
+        .then((data) => {
+          if (data.erro) {
+            alert("CEP não encontrado!");
+          } else {
+            // Preenche os campos com os dados retornados
+            enderecoInput.value = data.logradouro || "";
+            bairroInput.value = data.bairro || "";
+            cidadeInput.value = data.localidade || "";
+            estadoSelect.value = data.uf || "";
 
-  const form = event.target;
-  const formData = {
-    nome: form.nome.value,
-    celular: form.celular.value,
-    endereco_atual: form.endereco_atual.value,
-    endereco_destino: form.endereco_destino.value,
-    cpf_cnpj: form.cpf_cnpj.value,
-    tipo_mudanca: form.tipo_mudanca.value,
-    data_mudanca: form.data_mudanca.value,
-    volume: form.volume.value,
-    servicos_adicionais: [
-      form.montagem.checked ? 'Montagem/Desmontagem' : '',
-      form.embalagem.checked ? 'Embalagem' : ''
-    ].filter(Boolean).join(', '),
-    observacoes: form.observacoes.value
-  };
+            // Foca automaticamente no campo número
+            numeroInput.focus();
+          }
+        })
+        .catch(() => alert("Erro ao buscar o CEP. Verifique sua conexão e tente novamente."));
+    }
+  });
+}
 
-  emailjs.send('service_wxgzbzc', 'template_v7v7sbm', formData)
-    .then(() => {
-      document.getElementById('success-message').style.display = 'block';
-      document.getElementById('error-message').style.display = 'none';
-      form.reset();
-    })
-    .catch(() => {
-      document.getElementById('success-message').style.display = 'none';
-      document.getElementById('error-message').style.display = 'block';
-    });
+// Inicializa os eventos de busca de endereço para ambos os campos de CEP
+document.addEventListener("DOMContentLoaded", function () {
+  buscarEndereco(
+    "cep_atual",
+    "endereco_atual",
+    "bairro_atual",
+    "cidade_atual",
+    "estado_atual",
+    "numero_atual"
+  );
+  buscarEndereco(
+    "cep_destino",
+    "endereco_destino",
+    "bairro_destino",
+    "cidade_destino",
+    "estado_destino",
+    "numero_destino"
+  );
 });
 
-// Registrar o service worker para PWA
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js')
-    .then(() => console.log('Service Worker registrado!'))
-    .catch(err => console.error('Erro ao registrar o Service Worker:', err));
-}
+// Função para exibir mensagens de sucesso ou erro
+document.getElementById("form-mudanca").addEventListener("submit", function (event) {
+  event.preventDefault(); // Previne o envio padrão do formulário
+
+  const successMessage = document.getElementById("success-message");
+  const errorMessage = document.getElementById("error-message");
+
+  // Validação simples dos campos obrigatórios
+  const nome = document.getElementById("nome").value.trim();
+  const celular = document.getElementById("celular").value.trim();
+
+  if (nome && celular) {
+    successMessage.style.display = "block";
+    errorMessage.style.display = "none";
+  } else {
+    successMessage.style.display = "none";
+    errorMessage.style.display = "block";
+  }
+});
+
+// Inicializa o EmailJS
+emailjs.init("tHArcRaXc2OD5e6TV");
+
+// Adiciona evento para envio do formulário via EmailJS
+document.getElementById("form-mudanca").addEventListener("submit", function (event) {
+  event.preventDefault(); // Previne o comportamento padrão do formulário
+
+  // Obtém os dados do formulário
+  const formData = new FormData(this);
+  const formObject = Object.fromEntries(formData.entries());
+
+  // Configura o envio do email
+  emailjs
+    .send("service_wxgzbzc", "template_wygyhjq", formObject)
+    .then(
+      function (response) {
+        alert("Obrigado por entrar em contato! Retornaremos em breve.");
+        console.log("SUCCESS!", response.status, response.text);
+      },
+      function (error) {
+        alert("Erro ao enviar mensagem. Tente novamente.");
+        console.error("FAILED...", error);
+      }
+    );
+});
