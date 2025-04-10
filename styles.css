@@ -1,107 +1,117 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #F5F5F5; /* Cinza Claro */
-  margin: 0;
-  padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F5F5F5;
+    margin: 0;
+    padding: 0;
 }
 
 .form-container {
-  max-width: 600px;
-  margin: 20px auto;
-  background: #FFFFFF; /* Branco */
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-  text-align: center;
-  color: #005B96; /* Azul Escuro */
+    text-align: center;
+    color: #005B96;
 }
 
 form {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 fieldset {
-  width: 100%;
-  border: 1px solid #C1D3E0; /* Cinza Azulado */
-  border-radius: 5px;
-  padding: 15px;
-  margin-bottom: 20px;
-  box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #C1D3E0;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
 }
 
 legend {
-  font-weight: bold;
-  color: #005B96; /* Azul Escuro */
+    font-weight: bold;
+    color: #005B96;
 }
 
 label {
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #005B96; /* Azul Escuro */
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #005B96;
 }
 
 input, select, textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #C1D3E0; /* Cinza Azulado */
-  border-radius: 5px;
-  box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #005B96;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .checkbox-group {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
 }
 
 textarea {
-  resize: vertical;
+    resize: vertical;
 }
 
-button {
-  background-color: #FFCC00; /* Amarelo Ouro */
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
+.email-btn {
+    background-color: #FFCC00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.whatsapp-btn {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 button:hover {
-  background-color: #E6B800; /* Amarelo mais escuro */
+    background-color: #7f7b6c;
 }
 
 .success-message, .error-message {
-  text-align: center;
-  margin-top: 20px;
-}
+    text-align: center;
+    margin-top: 20px;
+} 
 
 .success-message {
-  color: green;
+    color: green;
 }
 
 .error-message {
-  color: red;
+    color: red;
 }
 
-/* Melhoria para responsividade */
 @media (max-width: 480px) {
-  .form-container {
-    padding: 15px;
-  }
+    .form-container  {
+        padding: 15px;
+    }
 
-  input, select, textarea {
-    padding: 8px;
-  }
+    input,select,textarea {
+        padding: 8px;
+    }
 
-  button {
-    padding: 8px 15px;
-    font-size: 14px;
-  }
+    button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
 }
