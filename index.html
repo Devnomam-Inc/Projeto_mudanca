@@ -1,180 +1,169 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulário de Mudança</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#007BFF">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Mudança</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#007BFF">
 </head>
 <body>
-  <div class="form-container">
-    <h1>Formulário de Mudança</h1>
-    <form id="form-mudanca">
-      <fieldset>
-        <legend>Dados Pessoais</legend>
-        <label for="nome">Nome Completo:</label>
-        <input type="text" id="nome" name="nome" required>
+    <div class="form-container">
+        <h1>Formulário de Mudança</h1>
+        <form id="form-mudanca">
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" required>
 
-        <label for="celular">Celular:</label>
-        <input type="tel" id="celular" name="celular" required placeholder="(XX) XXXXX-XXXX">
-      </fieldset>
+                <label for="celular">Celular:</label>
+                <input type="tel" id="celular" name="celular" required placeholder="(xx)xxxxx-xxxx">
+            </fieldset>
 
-      <fieldset>
-        <legend>Endereço Atual</legend>
-        <label for="cep_atual">CEP:</label>
-        <input type="text" id="cep_atual" name="cep_atual" required placeholder="00000-000" maxlength="9">
-        
-        <label for="endereco_atual">Endereço:</label>
-        <input type="text" id="endereco_atual" name="endereco_atual" required readonly>
+            <fieldset>
+                <legend>Endereço Atual</legend>
+                <label for="cep_atual">CEP:</label>
+                <input type="text" id="cep_atual" name="cep_atual" required placeholder="00000-000" maxlength="9">
 
-        <label for="numero_atual">Número:</label>
-        <input type="text" id="numero_atual" name="numero_atual" required>
-        
-        <label for="complemento_atual">Complemento:</label>
-        <input type="text" id="complemento_atual" name="complemento_atual">
-        
-        <label for="bairro_atual">Bairro:</label>
-        <input type="text" id="bairro_atual" name="bairro_atual" required readonly>
+                <label for="endereco_atual">Endereço:</label>
+                <input type="text" id="endereco_atual" name="endereco_atual" required readonly>
 
-        <label for="cidade_atual">Cidade:</label>
-        <input type="text" id="cidade_atual" name="cidade_atual" required readonly>
+                <label for="numero_atual">Número:</label>
+                <input type="text" id="numero_atual" name="numero_atual" required>
 
-        <label for="estado_atual">Estado:</label>
-        <select id="estado_atual" name="estado_atual" required>
-          <option value="">Selecione o Estado</option>
-          <option value="AC">Acre</option>
-          <option value="AL">Alagoas</option>
-          <option value="AP">Amapá</option>
-          <option value="AM">Amazonas</option>
-          <option value="BA">Bahia</option>
-          <option value="CE">Ceará</option>
-          <option value="DF">Distrito Federal</option>
-          <option value="ES">Espírito Santo</option>
-          <option value="GO">Goiás</option>
-          <option value="MA">Maranhão</option>
-          <option value="MT">Mato Grosso</option>
-          <option value="MS">Mato Grosso do Sul</option>
-          <option value="MG">Minas Gerais</option>
-          <option value="PA">Pará</option>
-          <option value="PB">Paraíba</option>
-          <option value="PR">Paraná</option>
-          <option value="PE">Pernambuco</option>
-          <option value="PI">Piauí</option>
-          <option value="RJ">Rio de Janeiro</option>
-          <option value="RN">Rio Grande do Norte</option>
-          <option value="RS">Rio Grande do Sul</option>
-          <option value="RO">Rondônia</option>
-          <option value="RR">Roraima</option>
-          <option value="SC">Santa Catarina</option>
-          <option value="SP">São Paulo</option>
-          <option value="SE">Sergipe</option>
-          <option value="TO">Tocantins</option>
-        </select>
-      </fieldset>
-      
-      <fieldset>
-        <legend>Endereço de destino</legend>
-        <label for="cep_destino">CEP:</label>
-        <input type="text" id="cep_destino" name="cep_destino" required placeholder="00000-000" maxlength="9">
-        
-        <label for="endereco_destino">Endereço:</label>
-        <input type="text" id="endereco_destino" name="endereco_destino" required readonly>
+                <label for="complemento_atual">Complemento:</label>
+                <input type="text" id="complemento_atual" name="complemento_atual">
 
-        <label for="numero_destino">Número:</label>
-        <input type="text" id="numero_destino" name="numero_destino" required>
-        
-        <label for="complemento_destino">Complemento:</label>
-        <input type="text" id="complemento_destino" name="complemento_destino">
-        
-        <label for="bairro_destino">Bairro:</label>
-        <input type="text" id="bairro_destino" name="bairro_destino" required readonly>
+                <label for="bairro_atual">Bairro:</label>
+                <input type="text" id="bairro_atual" name="bairro_atual" required readonly>
 
-        <label for="cidade_destino">Cidade:</label>
-        <input type="text" id="cidade_destino" name="cidade_destino" required readonly>
+                <label for="cidade_atual">Cidade:</label>
+                <input type="text" id="cidade_atual" name="cidade_atual" required readonly>
 
-        <label for="estado_destino">Estado:</label>
-        <select id="estado_destino" name="estado_destino" required>
-          <option value="">Selecione o Estado</option>
-          <option value="AC">Acre</option>
-          <option value="AL">Alagoas</option>
-          <option value="AP">Amapá</option>
-          <option value="AM">Amazonas</option>
-          <option value="BA">Bahia</option>
-          <option value="CE">Ceará</option>
-          <option value="DF">Distrito Federal</option>
-          <option value="ES">Espírito Santo</option>
-          <option value="GO">Goiás</option>
-          <option value="MA">Maranhão</option>
-          <option value="MT">Mato Grosso</option>
-          <option value="MS">Mato Grosso do Sul</option>
-          <option value="MG">Minas Gerais</option>
-          <option value="PA">Pará</option>
-          <option value="PB">Paraíba</option>
-          <option value="PR">Paraná</option>
-          <option value="PE">Pernambuco</option>
-          <option value="PI">Piauí</option>
-          <option value="RJ">Rio de Janeiro</option>
-          <option value="RN">Rio Grande do Norte</option>
-          <option value="RS">Rio Grande do Sul</option>
-          <option value="RO">Rondônia</option>
-          <option value="RR">Roraima</option>
-          <option value="SC">Santa Catarina</option>
-          <option value="SP">São Paulo</option>
-          <option value="SE">Sergipe</option>
-          <option value="TO">Tocantins</option>
-        </select>
-      </fieldset>
+                <label for="estado_atual">Estado:</label>
+                <select id="estado_atual" name="estado_atual" required>
+                    <option value="">Selecione o estado</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+            </fieldset>
 
-      <fieldset>
-        <legend>Detalhes da Mudança</legend>
-        <label for="tipo_mudanca">Tipo de Mudança:</label>
-        <select id="tipo_mudanca" name="tipo_mudanca" required>
-          <option value="residencial">Residencial</option>
-          <option value="comercial">Comercial</option>
-        </select>
+            <fieldset>
+                <legend>Endereço de Destino</legend>
+                <label for="cep_destino">CEP:</label>
+                <input type="text" id="cep_destino" name="cep_destino" required placeholder="00000-000" maxlength="9">
 
-        <label for="data_mudanca">Data da Mudança:</label>
-        <input type="date" id="data_mudanca" name="data_mudanca" required>
+                <label for="endereco_destino">Endereço:</label>
+                <input type="text" id="endereco_destino" name="endereco_destino" required readonly>
 
-         <label for="volume">Volume em m³:</label>
-        <select id="volume" name="volume" required>
-          <option value="" disabled selected>Selecione o volume</option>
-          <script>
-            for (let i = 1; i <= 60; i++) {
-              document.write(`<option value="${i}">${i} m³</option>`);
-            }
-          </script>
-        </select>
+                <label for="numero_destino">Número:</label>
+                <input type="text" id="numero_destino" name="numero_destino" required>
 
-        <label for="servicos_adicionais">Serviços Adicionais:</label>
-        <div class="checkbox-group">
-          <input type="checkbox" id="montagem" name="servicos_adicionais" value="Montagem/Desmontagem">
-          <label for="montagem">Mont./Desmont.</label>
+                <label for="complemento_destino">Complemento:</label>
+                <input type="text" id="complemento_destino" name="complemento_destino">
 
-          <input type="checkbox" id="embalagem" name="servicos_adicionais" value="Embalagem">
-          <label for="embalagem">Embalagem</label>
-        </div>
+                <label for="bairro_destino">Bairro:</label>
+                <input type="text" id="bairro_destino" name="bairro_destino" required readonly>
 
-        <label for="observacoes">Observações:</label>
-        <textarea id="observacoes" name="observacoes" rows="5"></textarea>
-      </fieldset>
+                <label for="cidade_destino">Cidade:</label>
+                <input type="text" id="cidade_destino" name="cidade_destino" required readonly>
 
-      <button type="submit">Enviar</button>
-    </form>
-    <div class="success-message" id="success-message" style="display: none;">Formulario enviado com sucesso! Em breve nossa equipe entrará em contato para mais informações.</div>
-    <div class="error-message" id="error-message" style="display: none;">Erro ao enviar o formulario. Tente novamente.</div>
-  </div>
-  
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js')
-      .then(() => console.log('Service Worker registrado com sucesso.'))
-      .catch((error) => console.log('Erro ao registrar o Service Worker:', error));
-  }
-</script>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script src="script.js"></script>
+                <label for="estado_destino">Estado:</label>
+                <select id="estado_destino" name="estado_destino" required>
+                    <option value="">Selecione o estado</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Detalhes da Mudança</legend>
+                <label for="tipo_mudanca">Tipo de mudança:</label>
+                <select id="tipo_mudanca" name="tipo_mudanca" required>
+                    <option value="residencial">Residencial</option>
+                    <option value="comercial">Comercial</option>
+                </select>
+
+                <label for="data_mudanca">Data da Mudança:</label>
+                <input type="date" id="data_mudanca" name="data_mudanca" required>
+
+                <label for="volume">Volume em m³:</label>
+                <select name="volume" id="volume" required></select>
+
+                <label for="servicos_adicionais">Serviços adicionais:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="montagem" name="servicos_adicionais" value="Montagem">
+                    <label for="montagem">Montagem/Desmontagem</label>
+
+                    <input type="checkbox" id="embalagem" name="servicos_adicionais" value="Embalagem">
+                    <label for="embalagem">Embalagem</label>
+                </div>
+
+                <label for="observacoes">Observações:</label>
+                <textarea name="observacoes" id="observacoes" rows="5"></textarea>
+            </fieldset>
+
+            <button type="submit" id="enviar-email" class="email-btn">Enviar via Email</button>
+            <button type="submit" id="enviar-whatsapp" class="whatsapp-btn">Enviar via WhatsApp</button>
+
+        </form>
+
+        <div class="success-message" id="success-message" style="display: none;">Formulário enviado com sucesso! Em breve nossa equipe entrará em contato para mais informações.</div>
+        <div class="error-message" id="error-message" style="display: none;">Erro ao enviar o formulário. Tente novamente.</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
